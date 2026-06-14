@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="fr"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact — Oscar Makosso Lueyi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --bg:#04060f;--bg2:#080d1a;--bg3:#0d1528;--card:#0a0f1e;
+  --text:#e8eeff;--text2:#8892b0;--text3:#4a5270;
+  --violet:#7c6fff;--v2:#a78bff;--blue:#3b82f6;--cyan:#00d9ff;
+  --green:#22c55e;--orange:#f97316;
+  --border:rgba(124,111,255,0.18);--glow:rgba(124,111,255,0.1);
+  --mono:'Space Mono',monospace;--sans:'Inter',sans-serif;
+  --radius:12px;--shadow:0 4px 24px rgba(4,6,15,0.6);
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;
+  justify-content:space-between;padding:0 5%;height:66px;
+  background:rgba(4,6,15,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.logo{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--text);text-decoration:none;}
+.logo span{color:var(--violet);}
+.nav-links{display:flex;gap:4px;list-style:none;}
+.nav-links a{text-decoration:none;color:var(--text2);font-size:13px;padding:6px 14px;
+  border-radius:6px;transition:all 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--violet);background:var(--glow);}
+.nav-cta{padding:8px 20px;background:var(--violet);color:#fff;border:none;
+  border-radius:7px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.nav-cta:hover{background:var(--v2);box-shadow:0 4px 20px rgba(124,111,255,0.4);}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.vis{opacity:1;transform:none;}
+footer{padding:28px 5%;text-align:center;border-top:1px solid var(--border);
+  font-family:var(--mono);font-size:11px;color:var(--text3);}
+footer span{color:var(--v2);}
+@media(max-width:768px){.nav-links{display:none;}}
+
+.ph{padding:130px 5% 70px;text-align:center;background:linear-gradient(180deg,#04060f 0%,#080d1a 100%);}
+.ph-tag{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--v2);margin-bottom:12px;}
+.ph-h1{font-size:clamp(36px,6vw,56px);font-weight:800;color:#fff;margin-bottom:14px;}
+.ph-h1 em{background:linear-gradient(135deg,var(--v2),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;}
+.ph-sub{font-size:16px;color:var(--text2);max-width:500px;margin:0 auto;line-height:1.7;}
+.contact-sec{padding:80px 5%;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start;}
+.ci-title{font-size:22px;font-weight:700;color:#fff;margin-bottom:8px;}
+.ci-sub{font-size:14px;color:var(--text2);margin-bottom:32px;line-height:1.7;}
+.ci{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:10px;margin-bottom:12px;transition:border-color 0.2s;text-decoration:none;color:var(--text);}
+.ci:hover{border-color:var(--violet);}
+.ci-icon{width:40px;height:40px;border-radius:8px;background:var(--glow);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.ci-lbl{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;font-family:var(--mono);}
+.ci-val{font-size:14px;font-weight:600;color:#fff;}
+.form-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:36px;box-shadow:0 12px 48px rgba(0,0,0,0.4);}
+.form-card h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;}
+.form-card p{font-size:13px;color:var(--text3);margin-bottom:28px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.field label{font-size:12px;color:var(--text3);font-weight:500;font-family:var(--mono);letter-spacing:0.06em;}
+.field input,.field textarea,.field select{background:var(--bg2);border:1.5px solid var(--border);border-radius:8px;padding:11px 16px;color:var(--text);font-size:14px;font-family:var(--sans);transition:border-color 0.2s;outline:none;resize:none;}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--violet);background:var(--card);}
+.field select option{background:var(--bg2);}
+.form-submit{width:100%;padding:14px;background:linear-gradient(135deg,var(--violet),var(--blue));color:#fff;border:none;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:4px;}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(124,111,255,0.35);}
+@media(max-width:900px){.contact-sec{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}.nav-links{display:none;}}
+</style></head><body>
+<nav><a class="logo" href="index.html">Oscar<span>.</span></a>
+<ul class="nav-links">
+  <li><a href="index.html" >Accueil</a></li>
+  <li><a href="apropos.html" >À propos</a></li>
+  <li><a href="projets.html" >Projets</a></li>
+  <li><a href="bilan.html" >Bilan</a></li>
+  <li><a href="contact.html" class='active'>Contact</a></li>
+</ul>
+<a href="contact.html" class="nav-cta">Me contacter</a></nav>
+<div class="ph">
+  <div class="ph-tag reveal">Disponible</div>
+  <h1 class="ph-h1 reveal">Me <em>contacter</em></h1>
+  <p class="ph-sub reveal">Disponible pour une alternance a partir de septembre 2026, un stage ou simplement un echange autour de la data science et de l'IA.</p>
+</div>
+<section class="contact-sec">
+  <div class="reveal">
+    <h3 class="ci-title">Mes coordonnees</h3>
+    <p class="ci-sub">Voici comment me joindre directement ou retrouver mes travaux en ligne.</p>
+    <a href="mailto:oscar.makosso@email.com" class="ci"><div class="ci-icon">✉️</div><div><div class="ci-lbl">Email direct</div><div class="ci-val">oscar.makosso@email.com</div></div></a>
+    <a href="https://github.com/" class="ci" target="_blank"><div class="ci-icon">🐙</div><div><div class="ci-lbl">Code & projets</div><div class="ci-val">GitHub — @oscar-mkl</div></div></a>
+    <a href="https://linkedin.com/" class="ci" target="_blank"><div class="ci-icon">💼</div><div><div class="ci-lbl">Reseau professionnel</div><div class="ci-val">LinkedIn — Syr Oscar Makosso Lueyi</div></div></a>
+    <a href="#" class="ci"><div class="ci-icon">📄</div><div><div class="ci-lbl">Curriculum Vitae</div><div class="ci-val">Telecharger mon CV</div></div></a>
+  </div>
+  <div class="form-card reveal">
+    <h3>Envoyer un message</h3>
+    <p>Recruteur, enseignant, collaborateur — je reponds sous 24h.</p>
+    <div class="form-row">
+      <div class="field"><label>Prenom</label><input type="text" placeholder="Jean"/></div>
+      <div class="field"><label>Nom</label><input type="text" placeholder="Dupont"/></div>
+    </div>
+    <div class="form-row">
+      <div class="field"><label>Email</label><input type="email" placeholder="jean@email.com"/></div>
+      <div class="field"><label>Telephone (optionnel)</label><input type="tel" placeholder="06 12 34 56 78"/></div>
+    </div>
+    <div class="form-row">
+      <div class="field"><label>Organisation</label><input type="text" placeholder="Entreprise / Ecole"/></div>
+      <div class="field"><label>Fonction</label><input type="text" placeholder="Recruteur, Prof..."/></div>
+    </div>
+    <div class="field"><label>Motif</label><select>
+      <option value="">Selectionnez un motif...</option>
+      <option>Proposition d'alternance</option>
+      <option>Offre de stage</option>
+      <option>Collaboration projet</option>
+      <option>Question sur un projet</option>
+      <option>Autre</option>
+    </select></div>
+    <div class="field"><label>Message</label><textarea rows="5" placeholder="Detaillez votre projet ou votre demande..."></textarea></div>
+    <button class="form-submit">Envoyer le message →</button>
+  </div>
+</section>
+<footer>Conçu &amp; développé par <span>Syr Oscar Makosso Lueyi</span> — BUT Sciences des Données, IUT de Niort — 2026</footer>
+<script>const _ro=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('vis'),i*60);});},{threshold:0.08});document.querySelectorAll('.reveal').forEach(el=>_ro.observe(el));</script></body></html>
